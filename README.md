@@ -28,7 +28,9 @@ You'll need a `wanb` account for this one
 3. Add your `wandb` username for `entity`
 4. In your terminal, run `python Train_model_2sec-window.py`
 
-Keep hitting this issue when running `python Train_model_2sec-window.py`:
+## Issues/Blockers
+
+I keep hitting this issue when running `python Train_model_2sec-window.py`:
 
 ```bash
 dt: 1
