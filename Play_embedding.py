@@ -2,12 +2,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 architecture_ID = "R-F"
-dataset = "wav-file-name"
+dataset = "Majulah"
 
 movie_path = "D:/Datasets/Deep Audio Embedding/No Place to Go/movies3/"
 
-outfile = 'C:/Users/MrLin/Documents/Experiments/Deep Audio Embedding/' + dataset + '/variables/vars.npz'
-Z_save_path = 'C:/Users/MrLin/Documents/Experiments/Deep Audio Embedding/' + dataset + '/Results/Embedding data/Z_last-' + architecture_ID + '.npy'
+outfile = dataset + '/variables/vars.npz'
+Z_save_path = dataset + '/Results/Embedding data/Z_last-' + architecture_ID + '.npy'
 
 vars = np.load(outfile)
 vars.files

@@ -1,14 +1,14 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-dataset = "wav-file-name"
+dataset = "Majulah"
 
 architecture_ID = "R-F"
-Z_save_path = 'C:/Users/MrLin/Documents/Experiments/Deep Audio Embedding/' + dataset + '/Results/Embedding data/Z_last-' + architecture_ID
+Z_save_path = dataset + '/Results/Embedding data/Z_last-' + architecture_ID
 Z_RF = np.load(Z_save_path + '.npy')
 
 architecture_ID = "R"
-Z_save_path = 'C:/Users/MrLin/Documents/Experiments/Deep Audio Embedding/' + dataset + '/Results/Embedding data/Z_last-' + architecture_ID
+Z_save_path = dataset + '/Results/Embedding data/Z_last-' + architecture_ID
 Z_R = np.load(Z_save_path + '.npy')
 
 fig = plt.figure(figsize=plt.figaspect(0.5))

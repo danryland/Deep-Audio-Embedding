@@ -1,23 +1,23 @@
 import tensorflow as tf
 from tensorflow import keras
 import numpy as np
-from tensorflow.keras.models import Model
-from tensorflow.keras.layers import Input, Dense, TimeDistributed, Flatten, Concatenate, LSTM, MaxPool1D, Reshape, Conv2DTranspose, BatchNormalization, UpSampling1D, Cropping2D, Conv1D
-from tensorflow.keras import backend as K
+from keras.models import Model
+from keras.layers import Input, Dense, TimeDistributed, Flatten, Concatenate, LSTM, MaxPool1D, Reshape, Conv2DTranspose, BatchNormalization, UpSampling1D, Cropping2D, Conv1D
+from keras import backend as K
 import pydot as pydot
 import wandb
 from wandb.keras import WandbCallback
 
 architecture_ID = "R-F"
-dataset = "wav-file-name"
+dataset = "Majulah"
 
-checkpoint_path = 'C:/Users/MrLin/Documents/Experiments/Deep Audio Embedding/' + dataset + '/saved models/last-' + architecture_ID
-outfile = 'C:/Users/MrLin/Documents/Experiments/Deep Audio Embedding/' + dataset + '/variables/vars.npz'
+checkpoint_path = dataset + '/saved models/last-' + architecture_ID
+outfile = dataset + '/variables/vars.npz'
 
 wandb.login()
 id = wandb.util.generate_id()
 print(f"Wandb ID: {id}")
-wandb.init(entity='your-wandb', project='Deep Audio Embedding', group='Vivaldi', name=architecture_ID, id=id, resume="allow",  # if you want to resume a crashed run, lookup the run id in W&B and paste it into id= and set resume="allow"
+wandb.init(entity='danryland', project='Deep Audio Embedding', name=architecture_ID, id=id, resume="allow",  # if you want to resume a crashed run, lookup the run id in W&B and paste it into id= and set resume="allow"
            config={"l": 45,  #l*dt (in sec)=length of clip. ~0.88s when dt=2 ie 0.05 s
                    "batch_size": 8,
                    "epochs": 7,

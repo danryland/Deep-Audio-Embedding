@@ -2,18 +2,18 @@ import numpy as np
 from sklearn.neighbors import NearestNeighbors
 import plotly.graph_objects as go
 
-dataset = "wav-file-name"
+dataset = "Majulah"
 architecture_ID = "R-F"
 
-checkpoint_path_LSTM = 'C:/Users/MrLin/Documents/Experiments/Deep Audio Embedding/' + dataset + '/saved models/Latent Space LSTM/last-' + architecture_ID
+checkpoint_path_LSTM = dataset + '/saved models/Latent Space LSTM/last-' + architecture_ID
 
 # Load from:
-Z_save_path = 'C:/Users/MrLin/Documents/Experiments/Deep Audio Embedding/' + dataset + '/Results/Embedding data/Z_last-' + architecture_ID
+Z_save_path = dataset + '/Results/Embedding data/Z_last-' + architecture_ID
 Z = np.load(Z_save_path + '.npy')
 latent_dim = Z.shape[1]
 print(latent_dim)
 # Save to:
-ZForecast_path = 'C:/Users/MrLin/Documents/Experiments/Deep Audio Embedding/' + dataset + '/Results/Embedding data/ZForecast/' + architecture_ID + '.npy'
+ZForecast_path = dataset + '/Results/Embedding data/ZForecast/' + architecture_ID + '.npy'
 
 
 def normalize0_1(A):

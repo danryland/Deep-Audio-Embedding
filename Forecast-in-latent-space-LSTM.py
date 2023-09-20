@@ -2,17 +2,17 @@ from tensorflow import keras
 import numpy as np
 import plotly.graph_objects as go
 
-dataset = "wav-file-name"
+dataset = "Majulah"
 architecture_ID = "R-F"
 
-checkpoint_path_LSTM = 'C:/Users/MrLin/Documents/Experiments/Deep Audio Embedding/' + dataset + '/saved models/Latent Space LSTM/last-' + architecture_ID
+checkpoint_path_LSTM = dataset + '/saved models/Latent Space LSTM/last-' + architecture_ID
 
 # Load from:
-Z_save_path = 'C:/Users/MrLin/Documents/Experiments/Deep Audio Embedding/' + dataset + '/Results/Embedding data/Z_last-' + architecture_ID
+Z_save_path = dataset + '/Results/Embedding data/Z_last-' + architecture_ID
 Z_test = np.load(Z_save_path + '.npy')
 
 # Save to:
-ZForecast_path = 'C:/Users/MrLin/Documents/Experiments/Deep Audio Embedding/' + dataset + '/Results/Embedding data/ZForecast/' + architecture_ID + '.npy'
+ZForecast_path = dataset + '/Results/Embedding data/ZForecast/' + architecture_ID + '.npy'
 
 # Option 1: load Latent-space LSTM (trained independently)
 model = keras.models.load_model(checkpoint_path_LSTM)

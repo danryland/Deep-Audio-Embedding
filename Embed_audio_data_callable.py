@@ -1,20 +1,20 @@
 import tensorflow as tf
 from tensorflow import keras
 import numpy as np
-from tensorflow.keras.models import Model
-from tensorflow.keras.layers import Input
+from keras.models import Model
+from keras.layers import Input
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 
 if __name__ == '__main__':
 
     architecture_ID = "R-F"
-    dataset = "wav-file-name"
+    dataset = "Majulah"
 
-    checkpoint_path = 'C:/Users/MrLin/Documents/Experiments/Deep Audio Embedding/' + dataset + '/saved models/last-' + architecture_ID
-    outfile = 'C:/Users/MrLin/Documents/Experiments/Deep Audio Embedding/' + dataset + '/variables/vars.npz'
+    checkpoint_path = dataset + '/saved models/last-' + architecture_ID
+    outfile = dataset + '/variables/vars.npz'
 
-    Z_save_path = 'C:/Users/MrLin/Documents/Experiments/Deep Audio Embedding/' + dataset + '/Results/Embedding data/Z_last-' + architecture_ID
+    Z_save_path = dataset + '/Results/Embedding data/Z_last-' + architecture_ID
 
     model = keras.models.load_model(checkpoint_path)
     model.summary()

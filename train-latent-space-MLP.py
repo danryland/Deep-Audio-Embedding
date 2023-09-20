@@ -1,17 +1,17 @@
 import tensorflow as tf
 from tensorflow import keras
 import numpy as np
-from tensorflow.keras.models import Model
-from tensorflow.keras.layers import Input, Dense
+from keras.models import Model
+from keras.layers import Input, Dense
 import pydot as pydot
 import wandb
 from wandb.keras import WandbCallback
 
 architecture_ID = "R-F"
-dataset = "wav-file-name"
+dataset = "Majulah"
 
-checkpoint_path = 'C:/Users/MrLin/Documents/Experiments/Deep Audio Embedding/' + dataset + '/saved models/Latent Space MLP/last-' + architecture_ID
-Z_tr = np.load('C:/Users/MrLin/Documents/Experiments/Deep Audio Embedding/' + dataset + '/Results/Embedding data/Z_last-' + architecture_ID + '.npy')
+checkpoint_path = dataset + '/saved models/Latent Space MLP/last-' + architecture_ID
+Z_tr = np.load(dataset + '/Results/Embedding data/Z_last-' + architecture_ID + '.npy')
 
 def normalize0_1(A):
     return (A-np.min(A))/(np.max(A) - np.min(A))

@@ -5,17 +5,17 @@ import csv
 import plotly.graph_objects as go
 from sklearn.neighbors import NearestNeighbors
 
-dataset = "wav-file-name"
+dataset = "Majulah"
 architecture_ID = "R"
-# checkpoint_path_LSTM = 'C:/Users/MrLin/Documents/Experiments/Deep Audio Embedding/' + dataset + '/saved models/Latent Space LSTM/last-' + architecture_ID
+# checkpoint_path_LSTM = dataset + '/saved models/Latent Space LSTM/last-' + architecture_ID
 
 #Load from:
-Z_save_path = 'C:/Users/MrLin/Documents/Experiments/Deep Audio Embedding/' + dataset + '/Results/Embedding data/Z_last-' + architecture_ID
+Z_save_path = dataset + '/Results/Embedding data/Z_last-' + architecture_ID
 Z = np.load(Z_save_path + '.npy')
 latent_dim = Z.shape[1]
 
 # Save to:
-Delta_path = 'C:/Users/MrLin/Documents/Experiments/Deep Audio Embedding/' + dataset + '/variables/Delta_' + architecture_ID
+Delta_path = dataset + '/variables/Delta_' + architecture_ID
 
 
 def normalize0_1(A):

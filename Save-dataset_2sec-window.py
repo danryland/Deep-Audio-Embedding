@@ -3,10 +3,10 @@ from scipy import signal
 from scipy.io import wavfile
 import matplotlib.pyplot as plt
 
-dataset = "wav-file-name"
+dataset = "Majulah"
 
-file_path = 'C:/Users/MrLin/Documents/Experiments/Deep Audio Embedding/Audio files/' + dataset + '.wav'
-outfile = 'C:/Users/MrLin/Documents/Experiments/Deep Audio Embedding/' + dataset + '/variables/vars.npz'
+file_path = dataset + '.wav'
+outfile = dataset + '/variables/vars.npz'
 
 sample_rate, X = wavfile.read(file_path)
 print(f"sample rate (Hz) = {sample_rate}")  # wave file should be rendered at samplerate=44100 Hz

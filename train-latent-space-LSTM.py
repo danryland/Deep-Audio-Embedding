@@ -1,19 +1,19 @@
 import tensorflow as tf
 from tensorflow import keras
 import numpy as np
-from tensorflow.keras.models import Model
-from tensorflow.keras.layers import Input, Dense, LSTM
+from keras.models import Model
+from keras.layers import Input, Dense, LSTM
 import pydot as pydot
 import wandb
 from wandb.keras import WandbCallback
 
-dataset = "wav-file-name"
+dataset = "Majulah"
 architecture_ID = "R-F"
 
-checkpoint_path_LSTM = 'C:/Users/MrLin/Documents/Experiments/Deep Audio Embedding/' + dataset + '/saved models/Latent Space LSTM/last-' + architecture_ID
+checkpoint_path_LSTM = dataset + '/saved models/Latent Space LSTM/last-' + architecture_ID
 # checkpoint_path_best_validation = 'C:/Users/MrLin/Documents/Experiments/Deep Audio Embedding/Applause/saved models/Latent Space LSTM/bestVAL-' + architecture_ID
 
-Z_save_path = 'C:/Users/MrLin/Documents/Experiments/Deep Audio Embedding/' + dataset + '/Results/Embedding data/Z_last-' + architecture_ID
+Z_save_path = dataset + '/Results/Embedding data/Z_last-' + architecture_ID
 Z_tr = np.load(Z_save_path + '.npy')
 
 def normalize0_1(A):
